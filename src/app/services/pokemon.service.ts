@@ -20,6 +20,7 @@ export class PokemonService {
     let second = generationArray[1];
     let randomNumber = Math.floor(Math.random() * (second - first) + 1) + first;
     this.randomPokemonNumber = randomNumber;
+    this.getRandomPokemon(this.randomPokemonNumber);
   }
 
   getRandomPokemon(randomNumber: number) {
