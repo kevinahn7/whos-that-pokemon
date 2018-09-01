@@ -14,10 +14,15 @@ export class GenerationsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  thePokemon: object;
   selectedGeneration: number;
 
   getRandomNumber(clickedGeneration: number) {
-    this.pokemonService.randomNumber(clickedGeneration);
+
+    this.pokemonService.createRandomNumber(clickedGeneration).subscribe(data => {
+      console.log("pokemon from generations " + data.json().name);
+      console.log(this.pokemonService.randomPokemonNumber);
+      //take out the subscribing part once the program works
+    })
   }
 }

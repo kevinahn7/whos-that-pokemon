@@ -8,22 +8,21 @@ import { generations } from '../models/generations.model';
 export class PokemonService {
 
   generationNumbers: object = generations;
-
+  
   constructor(private http: Http) { }
 
   randomPokemonNumber: number;
-  randomPokemon: object;
 
-  randomNumber(generationNumber: number) {
+  createRandomNumber(generationNumber: number) {
     let generationArray = this.generationNumbers[generationNumber];
     let first = generationArray[0];
     let second = generationArray[1];
     let randomNumber = Math.floor(Math.random() * (second - first) + 1) + first;
     this.randomPokemonNumber = randomNumber;
-    this.getRandomPokemon(this.randomPokemonNumber);
+    return this.createRandomPokemon(this.randomPokemonNumber);
   }
 
-  getRandomPokemon(randomNumber: number) {
-    this.randomPokemon = this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`)
+  createRandomPokemon(randomNumber: number) {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
   }
 }
