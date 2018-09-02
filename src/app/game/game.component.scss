@@ -36,6 +36,14 @@ img {
     margin-left: 70px;
 }
 
+.theAnswer {
+    display: inline;
+    margin-left: 30px;
+    h3 {
+        display: inline;
+    }
+}
+
 .hidden {
     -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
     filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);

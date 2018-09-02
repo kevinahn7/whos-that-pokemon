@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
+    this.getGifNumber();
   }
 
   currentPokemon: object;
@@ -23,11 +24,21 @@ export class GameComponent implements OnInit {
   madeCorrectGuess: boolean = false;
   madeIncorrectGuess: boolean = false;
   gaveUp: boolean = false;
+  gifNumber: number;
+  showAnswerBool: boolean = false;
 
-
+  getGifNumber() {
+    this.gifNumber = Math.floor(Math.random() * 20) + 1;
+  }
 
   getRandomNumber(clickedGeneration: number) {
+    this.getGifNumber();
+    this.showAnswerBool = false;
     this.currentPokemon = null;
+    this.madeCorrectGuess = false;
+    this.madeIncorrectGuess = false;
+    this.gaveUp = false;
+    this.currentPokemonName = null;
     if (this.currentPokemonName) {
       (<HTMLInputElement>document.getElementById("guessInput")).value = '';
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = false;
@@ -49,14 +60,33 @@ export class GameComponent implements OnInit {
   makeGuess(nameGuess: string) {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
       this.madeCorrectGuess = true;
-      let pokemonElement = document.getElementById(this.currentPokemonId);
-      pokemonElement.classList.remove("hidden");
       this.madeIncorrectGuess = false;
+      this.showAnswerBool = true;
+      document.getElementById(this.currentPokemonId).classList.remove("hidden");
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
     } else {
       this.madeIncorrectGuess = true;
     }
+  }
+
+  nextPokemon() {
+    this.madeCorrectGuess = false;
+    this.getRandomNumber(this.selectedGeneration);
+  }
+
+  showAnswer() {
+    this.showAnswerBool = true;
+    document.getElementById(this.currentPokemonId).classList.remove("hidden");
+    (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
+    (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
+    this.madeIncorrectGuess = false;
+    this.gaveUp = true;
+  }
+
+  gaveUpNext() {
+    this.gaveUp = false;
+    this.getRandomNumber(this.selectedGeneration);
   }
 }
 
