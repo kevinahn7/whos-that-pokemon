@@ -27,17 +27,18 @@ export class GameComponent implements OnInit {
 
 
   getRandomNumber(clickedGeneration: number) {
-    console.log("gegeg");
+    this.currentPokemon = null;
+    (<HTMLInputElement>document.getElementById("guessInput")).value = '';
     this.pokemonService.createRandomNumber(clickedGeneration).subscribe(data => {
       this.selectedGeneration = clickedGeneration;
       this.randomNumber = this.pokemonService.randomPokemonNumber;
       this.currentPokemon = data.json();
       this.currentPokemonName = data.json().name;
       this.currentPokemonId = (data.json().id).toString();
+      console.log(this.currentPokemonName);
     })
     if (this.currentPokemon) {
-      let pokemonElement = document.getElementById(this.currentPokemonId);
-      pokemonElement.classList.add("hidden");
+      document.getElementById(this.currentPokemonId).classList.add("hidden");
     }
   }
 
@@ -47,6 +48,8 @@ export class GameComponent implements OnInit {
       let pokemonElement = document.getElementById(this.currentPokemonId);
       pokemonElement.classList.remove("hidden");
       this.madeIncorrectGuess = false;
+      (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
+      (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
     } else {
       this.madeIncorrectGuess = true;
     }

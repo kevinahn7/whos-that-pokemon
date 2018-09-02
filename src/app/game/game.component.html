@@ -35,8 +35,8 @@
   <div class="interface">
     <h3>Make a guess</h3>
     <div>
-      <input #guess>
-      <button (click)="makeGuess(guess.value)">Guess</button>
+      <input #guess id="guessInput">
+      <button id="guessButton" (click)="makeGuess(guess.value)">Guess</button>
     </div>
 
     <div *ngIf="madeCorrectGuess">
