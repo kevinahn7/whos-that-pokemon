@@ -33,6 +33,7 @@ export class GameComponent implements OnInit {
 
   getRandomNumber(clickedGeneration: number) {
     this.getGifNumber();
+    this.currentPokemonId = "1";
     this.showAnswerBool = false;
     this.currentPokemon = null;
     this.madeCorrectGuess = false;

@@ -23,6 +23,6 @@ export class PokemonService {
   }
 
   createRandomPokemon(randomNumber: number) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`);
   }
 }
