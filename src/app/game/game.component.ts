@@ -71,7 +71,6 @@ export class GameComponent implements OnInit {
   }
 
   nextPokemon() {
-    this.madeCorrectGuess = false;
     this.getRandomNumber(this.selectedGeneration);
   }
 
@@ -85,7 +84,6 @@ export class GameComponent implements OnInit {
   }
 
   gaveUpNext() {
-    this.gaveUp = false;
     this.getRandomNumber(this.selectedGeneration);
   }
 }
