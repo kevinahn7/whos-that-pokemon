@@ -3,17 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { GenerationsComponent } from './generations/generations.component';
-import { DisplayComponent } from './display/display.component';
-import { InterfaceComponent } from './interface/interface.component';
+import { GameComponent } from './game/game.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GenerationsComponent,
-    DisplayComponent,
-    InterfaceComponent
+    GameComponent
   ],
   imports: [
     BrowserModule,
