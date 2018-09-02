@@ -50,10 +50,10 @@
 
     <div *ngIf="currentPokemonName && !gaveUp">
       <h3>Make a guess</h3>
-      <div>
+      <form (submit)="makeGuess(guess.value); $event.preventDefault()">
         <input #guess id="guessInput">
-        <button id="guessButton" (click)="makeGuess(guess.value)">Guess</button>
-      </div>
+        <button id="guessButton" type="submit">Guess</button>
+      </form>
     </div>
 
     <div *ngIf="madeCorrectGuess">
