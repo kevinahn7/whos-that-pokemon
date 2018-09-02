@@ -27,8 +27,10 @@
   </div>
 
   <div class="display">
-    <div *ngIf=currentPokemon>
-        <img class="hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}">
+    <div class="containingDiv">
+      <div class="pokemonDisplay" *ngIf=currentPokemon>
+          <img class="hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}">
+      </div>
     </div>
   </div>
 
@@ -36,7 +38,7 @@
 
   <div class="interface">
     <div *ngIf="!currentPokemonName">
-      Choose a Generation First!
+      <h2 class="greeting">Choose a Generation First!</h2>
     </div>
 
     <div *ngIf="currentPokemonName">

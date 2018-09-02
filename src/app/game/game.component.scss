@@ -4,23 +4,40 @@
         "generations theDisplay"
         "generations interface";
     grid-template-columns: 200px auto;
+    grid-template-rows: auto;
+    padding: 20px;
     .generations {
         grid-area: generations;
     }
     .display {
         grid-area: theDisplay;
+        .pokemonDisplay {
+            background-image: url("../../assets/pokemon-background.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 400px;
+            width: 710px;
+            margin: 0 auto;
+        }
     }
     .interface {
         grid-area: interface;
+        text-align: center;
     }
 }
 
+.greeting {
+    text-align: center;
+}
+
 img {
-    width: 300px;
+    width: 270px;
+    margin-top: 60px;
+    margin-left: 70px;
 }
 
 .hidden {
     -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
     filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
     opacity: 1;
-  }
+}
