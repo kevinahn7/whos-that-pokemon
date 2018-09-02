@@ -28,7 +28,11 @@ export class GameComponent implements OnInit {
 
   getRandomNumber(clickedGeneration: number) {
     this.currentPokemon = null;
-    (<HTMLInputElement>document.getElementById("guessInput")).value = '';
+    if (this.currentPokemonName) {
+      (<HTMLInputElement>document.getElementById("guessInput")).value = '';
+      (<HTMLInputElement> document.getElementById("guessButton")).disabled = false;
+      (<HTMLInputElement>document.getElementById("guessInput")).disabled = false;
+    }
     this.pokemonService.createRandomNumber(clickedGeneration).subscribe(data => {
       this.selectedGeneration = clickedGeneration;
       this.randomNumber = this.pokemonService.randomPokemonNumber;

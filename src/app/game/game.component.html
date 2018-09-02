@@ -32,11 +32,19 @@
     </div>
   </div>
 
+
+
   <div class="interface">
-    <h3>Make a guess</h3>
-    <div>
-      <input #guess id="guessInput">
-      <button id="guessButton" (click)="makeGuess(guess.value)">Guess</button>
+    <div *ngIf="!currentPokemonName">
+      Choose a Generation First!
+    </div>
+
+    <div *ngIf="currentPokemonName">
+      <h3>Make a guess</h3>
+      <div>
+        <input #guess id="guessInput">
+        <button id="guessButton" (click)="makeGuess(guess.value)">Guess</button>
+      </div>
     </div>
 
     <div *ngIf="madeCorrectGuess">
