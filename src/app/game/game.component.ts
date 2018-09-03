@@ -66,6 +66,7 @@ export class GameComponent implements OnInit {
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
+      
     } else {
       this.madeIncorrectGuess = true;
     }
