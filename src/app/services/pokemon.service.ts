@@ -18,8 +18,7 @@ export class PokemonService {
     let first = generationArray[0];
     let second = generationArray[1];
     let randomNumber = Math.floor(Math.random() * (second - first) + 1) + first;
-    let randomPokemonNumber = randomNumber;
-    return this.createRandomPokemon(randomPokemonNumber);
+    return this.createRandomPokemon(randomNumber);
   }
 
   createRandomPokemon(randomNumber: number) {

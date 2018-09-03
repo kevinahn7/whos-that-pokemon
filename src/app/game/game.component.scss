@@ -4,6 +4,18 @@
          url('../../assets/pokemon-solid.ttf')  format('truetype'); /* Safari, Android, iOS */
   }
 
+$blue-border:
+    -4px -4px 0 #3466AF,
+    4px -4px 0 #3466AF,
+    -4px 4px 0 #3466AF,
+    4px 4px 0 #3466AF,
+    5px 0 0 #3466AF,
+    -5px 0 0 #3466AF,
+    0 5px 0 #3466AF,
+    0 -5px 0 #3466AF;
+
+$hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
+
 .layout {
     display: grid;
     grid-template-areas:
@@ -45,13 +57,9 @@
     text-align: center;
     font-size: 50px;
     font-family: 'pokemon';
-        color: yellow;
-        letter-spacing: 3px;
-        text-shadow:
-            -5px -5px 0 blue,
-            5px -5px 0 blue,
-            -5px 5px 0 blue,
-            5px 5px 0 blue;
+    color: #FFCB05;
+    letter-spacing: 3px;
+    text-shadow: $blue-border;
 }
 
 .thePokemon {
@@ -76,20 +84,17 @@
     margin-left: 30px;
     h3 {
         display: inline;
+        font-size: 50px;
         font-family: 'pokemon';
-        color: yellow;
+        color: #FFCB05;
         letter-spacing: 3px;
-        text-shadow:
-            -5px -5px 0 blue,
-            5px -5px 0 blue,
-            -5px 5px 0 blue,
-            5px 5px 0 blue;
+        text-shadow: $blue-border;
     }
 }
 
 .hidden {
-    -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
-    filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
+    -webkit-filter: $hidden-color;
+    filter: $hidden-color;
     opacity: 1;
 }
 
