@@ -40,10 +40,11 @@ export class GameComponent implements OnInit {
     this.madeIncorrectGuess = false;
     this.gaveUp = false;
     this.currentPokemonName = null;
-    if (this.currentPokemonName) {
+    if (this.currentPokemon) {
       (<HTMLInputElement>document.getElementById("guessInput")).value = '';
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = false;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = false;
+      document.getElementById(this.currentPokemonId).classList.add("hidden")
     }
     this.pokemonService.createRandomNumberAndPokemon(clickedGeneration).subscribe(data => {
       this.selectedGeneration = clickedGeneration;
@@ -55,9 +56,6 @@ export class GameComponent implements OnInit {
       console.log(err);
       this.theError = err;
     })
-    if (this.currentPokemon) {
-      document.getElementById(this.currentPokemonId).classList.add("hidden");
-    }
   }
 
   makeGuess(nameGuess: string) {
