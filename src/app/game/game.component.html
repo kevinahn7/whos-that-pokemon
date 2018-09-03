@@ -1,4 +1,4 @@
-<div class="layout">
+<div class="layout"  *ngIf="!theError; else errorPresent">
   <div class="generations">
     <h2>Pick your Generation:</h2>
     <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
@@ -37,8 +37,6 @@
     </div>
   </div>
 
-
-
   <div class="interface">
     <div *ngIf="!currentPokemonId">
       <h2 class="greeting">Choose a Generation First!</h2>
@@ -71,6 +69,10 @@
     <div *ngIf="gaveUp">
       <button (click)="gaveUpNext()">Next</button>
     </div>
-
   </div>
 </div>
+
+<ng-template #errorPresent>
+  <img src="../../assets/error.gif" class="errorImage"/>
+  <p class="errorMessage">There is a {{theError.status}} error</p>
+</ng-template>

@@ -24,6 +24,7 @@ export class GameComponent implements OnInit {
   gaveUp: boolean = false;
   gifNumber: number;
   showAnswerBool: boolean = false;
+  theError: object;
 
   getGifNumber() {
     this.gifNumber = Math.floor(Math.random() * 21) + 1;
@@ -31,6 +32,7 @@ export class GameComponent implements OnInit {
 
   getRandomNumber(clickedGeneration: number) {
     this.getGifNumber();
+    this.theError = null;
     this.currentPokemonId = "1";
     this.showAnswerBool = false;
     this.currentPokemon = null;
@@ -49,6 +51,9 @@ export class GameComponent implements OnInit {
       this.currentPokemonName = data.json().name;
       this.currentPokemonId = (data.json().id).toString();
       console.log(this.currentPokemonName);
+    },(err) => {
+      console.log(err);
+      this.theError = err;
     })
     if (this.currentPokemon) {
       document.getElementById(this.currentPokemonId).classList.add("hidden");
