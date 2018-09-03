@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
+import { errorResponses } from '../models/errorResponses.models';
 
 @Component({
   selector: 'app-game',
@@ -15,30 +16,35 @@ export class GameComponent implements OnInit {
     this.getGifNumber();
   }
 
+  gameStates = {
+    1: "initial",
+    2: "correctGuess",
+    3: "incorrectGuess",
+    4: "gaveUp"
+  }
+
+  currentGameState: string;
   currentPokemon: object;
   currentPokemonName: string;
   currentPokemonId: string
   selectedGeneration: number;
   madeCorrectGuess: boolean = false;
-  madeIncorrectGuess: boolean = false;
-  gaveUp: boolean = false;
   gifNumber: number;
   showAnswerBool: boolean = false;
   theError: object;
+  errorMessage: string;
 
   getGifNumber() {
     this.gifNumber = Math.floor(Math.random() * 21) + 1;
   }
 
   getRandomNumber(clickedGeneration: number) {
+    this.currentGameState = this.gameStates[1];
     this.getGifNumber();
     this.theError = null;
     this.currentPokemonId = "1";
     this.showAnswerBool = false;
     this.currentPokemon = null;
-    this.madeCorrectGuess = false;
-    this.madeIncorrectGuess = false;
-    this.gaveUp = false;
     this.currentPokemonName = null;
     if (this.currentPokemon) {
       (<HTMLInputElement>document.getElementById("guessInput")).value = '';
@@ -54,23 +60,24 @@ export class GameComponent implements OnInit {
       console.log(this.currentPokemonName);
     },(err) => {
       this.theError = err;
+      this.errorMessage = errorResponses[err.status];
     })
   }
 
   makeGuess(nameGuess: string) {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
-      this.madeCorrectGuess = true;
-      this.madeIncorrectGuess = false;
+      this.currentGameState = this.gameStates[2];
       this.showAnswerBool = true;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
     } else {
-      this.madeIncorrectGuess = true;
+      this.currentGameState = this.gameStates[3];
     }
   }
 
   nextPokemon() {
+    this.currentGameState = this.gameStates[1];
     this.getRandomNumber(this.selectedGeneration);
   }
 
@@ -79,13 +86,11 @@ export class GameComponent implements OnInit {
     document.getElementById(this.currentPokemonId).classList.remove("hidden");
     (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
     (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
-    this.madeIncorrectGuess = false;
-    this.gaveUp = true;
+    this.currentGameState = this.gameStates[4];
   }
 
   gaveUpNext() {
+    this.currentGameState = this.gameStates[1];
     this.getRandomNumber(this.selectedGeneration);
   }
 }
-
-

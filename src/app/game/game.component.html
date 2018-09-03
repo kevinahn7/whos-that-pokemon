@@ -38,16 +38,16 @@
   </div>
 
   <div class="interface">
-    <div *ngIf="!currentPokemonId">
+    <div *ngIf="!currentGameState">
       <h2 class="greeting">Choose a Generation First!</h2>
     </div>
 
-    <div *ngIf="!currentPokemonName && currentPokemonId">
+    <div *ngIf="!currentPokemon && currentPokemonId">
       <div class="loading">Loading...</div>
       <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
     </div>
 
-    <div *ngIf="currentPokemonName && !gaveUp">
+    <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
       <h3>Make a guess</h3>
       <form (submit)="makeGuess(guess.value); $event.preventDefault()" class="form-inline theGuess">
         <input #guess id="guessInput" class="form-control">
@@ -55,18 +55,18 @@
       </form>
     </div>
 
-    <div *ngIf="madeCorrectGuess">
+    <div *ngIf="currentGameState === 'correctGuess'">
       <h3>Correct!</h3>
       <button (click)="nextPokemon()" class="btn btn-success">Next Pokemon</button>
     </div>
 
-    <div *ngIf="madeIncorrectGuess">
+    <div *ngIf="currentGameState === 'incorrectGuess'">
       <h3>Wrong</h3>
       <p>You can see the answer or guess again</p>
       <button (click)="showAnswer()" class="btn btn-info">Show Answer</button>
     </div>
 
-    <div *ngIf="gaveUp">
+    <div *ngIf="currentGameState === 'gaveUp'">
       <button (click)="gaveUpNext()" class="btn btn-success">Next</button>
     </div>
   </div>
@@ -75,4 +75,5 @@
 <ng-template #errorPresent>
   <img src="../../assets/error.gif" class="errorImage"/>
   <p class="errorMessage">There is a {{theError.status}} error</p>
+  <p class="errorMessage">{{errorMessage}}</p>
 </ng-template>
