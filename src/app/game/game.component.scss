@@ -58,12 +58,43 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            .theAnswer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 100px;
+                h3 {
+                    font-size: 50px;
+                    font-family: 'pokemon';
+                    color: #3466AF;
+                    letter-spacing: 3px;
+                    text-shadow: $yellow-border;
+                    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+                    -moz-animation: fadein 0.5s; /* Firefox < 16 */
+                    -ms-animation: fadein 0.5s; /* Internet Explorer */
+                    -o-animation: fadein 0.5s; /* Opera < 12.1 */
+                    animation: fadein 0.5s;
+                }
+            }
         }
     }
     .interface {
         grid-area: interface;
         text-align: center;
     }
+}
+
+.thePokemon {
+    width: 270px;
+    margin-top: 50px;
+    margin-left: 70px;
+    transition: 0.5s;
+}
+
+.hidden {
+    -webkit-filter: $hidden-color;
+    filter: $hidden-color;
+    opacity: 1;
 }
 
 .greeting {
@@ -73,14 +104,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
     color: #FFCB05;
     letter-spacing: 3px;
     text-shadow: $blue-border;
-}
-
-.thePokemon {
-    width: 270px;
-    margin-top: 50px;
-    margin-left: 70px;
-    transition: 0.5s;
-
 }
 
 .loading {
@@ -96,31 +119,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 .theGuess {
     display: block;
     margin: 0 auto;
-}
-
-.theAnswer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 100px;
-    h3 {
-        font-size: 50px;
-        font-family: 'pokemon';
-        color: #3466AF;
-        letter-spacing: 3px;
-        text-shadow: $yellow-border;
-        -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fadein 0.5s; /* Firefox < 16 */
-        -ms-animation: fadein 0.5s; /* Internet Explorer */
-        -o-animation: fadein 0.5s; /* Opera < 12.1 */
-        animation: fadein 0.5s;
-    }
-}
-
-.hidden {
-    -webkit-filter: $hidden-color;
-    filter: $hidden-color;
-    opacity: 1;
 }
 
 .errorMessage {
