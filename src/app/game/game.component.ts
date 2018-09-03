@@ -53,7 +53,6 @@ export class GameComponent implements OnInit {
       this.currentPokemonId = (data.json().id).toString();
       console.log(this.currentPokemonName);
     },(err) => {
-      console.log(err);
       this.theError = err;
     })
   }
@@ -66,7 +65,6 @@ export class GameComponent implements OnInit {
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
-      
     } else {
       this.madeIncorrectGuess = true;
     }
