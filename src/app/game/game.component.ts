@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -20,7 +19,6 @@ export class GameComponent implements OnInit {
   currentPokemonName: string;
   currentPokemonId: string
   selectedGeneration: number;
-  randomNumber: number;
   madeCorrectGuess: boolean = false;
   madeIncorrectGuess: boolean = false;
   gaveUp: boolean = false;
@@ -28,7 +26,7 @@ export class GameComponent implements OnInit {
   showAnswerBool: boolean = false;
 
   getGifNumber() {
-    this.gifNumber = Math.floor(Math.random() * 20) + 1;
+    this.gifNumber = Math.floor(Math.random() * 21) + 1;
   }
 
   getRandomNumber(clickedGeneration: number) {
@@ -45,9 +43,8 @@ export class GameComponent implements OnInit {
       (<HTMLInputElement> document.getElementById("guessButton")).disabled = false;
       (<HTMLInputElement>document.getElementById("guessInput")).disabled = false;
     }
-    this.pokemonService.createRandomNumber(clickedGeneration).subscribe(data => {
+    this.pokemonService.createRandomNumberAndPokemon(clickedGeneration).subscribe(data => {
       this.selectedGeneration = clickedGeneration;
-      this.randomNumber = this.pokemonService.randomPokemonNumber;
       this.currentPokemon = data.json();
       this.currentPokemonName = data.json().name;
       this.currentPokemonId = (data.json().id).toString();

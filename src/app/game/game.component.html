@@ -29,7 +29,7 @@
   <div class="display">
     <div class="containingDiv">
       <div class="pokemonDisplay" *ngIf=currentPokemon>
-          <img class="hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}" />
+          <img class="thePokemon hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}" />
           <div *ngIf="showAnswerBool" class="theAnswer">
             <h3>{{currentPokemonName}}</h3>
           </div>
@@ -45,7 +45,8 @@
     </div>
 
     <div *ngIf="!currentPokemonName && currentPokemonId">
-      <img src="../../assets/loading{{gifNumber}}.gif"/>
+      <div class="loading">Loading...</div>
+      <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
     </div>
 
     <div *ngIf="currentPokemonName && !gaveUp">

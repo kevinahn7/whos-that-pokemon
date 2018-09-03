@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'pokemon';
+    src: url('../../assets/pokemon-solid.woff') format('woff'), /* Modern Browsers */
+         url('../../assets/pokemon-solid.ttf')  format('truetype'); /* Safari, Android, iOS */
+  }
+
 .layout {
     display: grid;
     grid-template-areas:
@@ -11,7 +17,12 @@
         text-align: center;
         background-color: rgba(255,255,255,0.5);
         padding: 20px;
-        height: 500px;
+        height: 450px;
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
     }
     .display {
         grid-area: theDisplay;
@@ -32,13 +43,32 @@
 
 .greeting {
     text-align: center;
+    font-size: 50px;
+    font-family: 'pokemon';
+        color: yellow;
+        letter-spacing: 3px;
+        text-shadow:
+            -5px -5px 0 blue,
+            5px -5px 0 blue,
+            -5px 5px 0 blue,
+            5px 5px 0 blue;
 }
 
-img {
+.thePokemon {
     width: 270px;
     margin-top: 60px;
     margin-left: 70px;
     transition: 0.5s;
+}
+
+.loading {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.loadingGif {
+    width: 270px;
 }
 
 .theAnswer {
@@ -46,6 +76,14 @@ img {
     margin-left: 30px;
     h3 {
         display: inline;
+        font-family: 'pokemon';
+        color: yellow;
+        letter-spacing: 3px;
+        text-shadow:
+            -5px -5px 0 blue,
+            5px -5px 0 blue,
+            -5px 5px 0 blue,
+            5px 5px 0 blue;
     }
 }
 

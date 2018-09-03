@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import { generations } from '../models/generations.model';
 
 
@@ -11,15 +10,13 @@ export class PokemonService {
   
   constructor(private http: Http) { }
 
-  randomPokemonNumber: number;
-
-  createRandomNumber(generationNumber: number) {
+  createRandomNumberAndPokemon(generationNumber: number) {
     let generationArray = this.generationNumbers[generationNumber];
     let first = generationArray[0];
     let second = generationArray[1];
     let randomNumber = Math.floor(Math.random() * (second - first) + 1) + first;
-    this.randomPokemonNumber = randomNumber;
-    return this.createRandomPokemon(this.randomPokemonNumber);
+    let randomPokemonNumber = randomNumber;
+    return this.createRandomPokemon(randomPokemonNumber);
   }
 
   createRandomPokemon(randomNumber: number) {
