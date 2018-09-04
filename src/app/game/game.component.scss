@@ -44,10 +44,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         "generations theDisplay"
         "generations greeting"
         "generations interface";
-
     grid-template-columns: 300px auto;
     grid-template-rows: auto;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     .generations {
         grid-area: generations;
         text-align: center;
@@ -113,6 +112,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 
 .hintBox {
     padding-top: 30px;
+    button {
+        width: 70%;
+    }
     .theHint {
         font-size: 20px;
         font-family: 'Press Start 2P', cursive;
