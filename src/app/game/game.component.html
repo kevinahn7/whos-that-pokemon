@@ -45,7 +45,7 @@
 
     <div class="interface">
       <div>
-        <div *ngIf="numberOfWrongs > 0" class="hintBox">
+        <div *ngIf="currentPokemon && !showAnswerBool" class="hintBox">
           <button *ngIf="!theHint" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
           <p class="theHint" *ngIf="theHint">Pokédex number: {{currentPokemonId}}</p>
           <p class="theHint" *ngIf="theHint">Type: {{theHint}}</p>
@@ -71,7 +71,6 @@
         </div>
   
         <div *ngIf="currentGameState === 'incorrectGuess'">
-          <h3>Wrong</h3>
           <p class="wrongGuesses" *ngIf="numberOfWrongs > 1">{{numberOfWrongs}} wrong guesses</p>
           <p class="wrongGuesses" *ngIf="numberOfWrongs === 1">{{numberOfWrongs}} wrong guess</p>
           <p>You can see the answer or guess again</p>
@@ -83,8 +82,12 @@
         </div>
       </div>
 
-      <div class="rightAnswerCounter">
-
+      <div class="rightAnswerCounter" *ngIf="currentPokemon">
+        <p class="theStreak">PokeStreak Counter!</p>
+        <div *ngIf="numberOfRights > 0">
+          <p class="theStreak" *ngIf="numberOfRights === 1">{{numberOfRights}} time right!</p>
+          <p class="theStreak" *ngIf="numberOfRights > 1">{{numberOfRights}} times right!</p>
+        </div>
       </div>
       
 

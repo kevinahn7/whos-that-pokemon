@@ -37,7 +37,6 @@ export class GameComponent implements OnInit {
   numberOfRights: number = 0;
   theHint: string = "";
   
-
   getGifNumber() {
     this.gifNumber = Math.floor(Math.random() * 21) + 1;
   }
@@ -51,15 +50,20 @@ export class GameComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("guessInput")).disabled = bool;
   }
 
-  getRandomNumber(clickedGeneration: number) {
+  resetGame() {
     this.numberOfWrongs = 0;
     this.currentGameState = this.gameStates[1];
     this.getGifNumber();
     this.theError = null;
     this.currentPokemonId = "1";
     this.showAnswerBool = false;
+    this.theHint = "";
     this.currentPokemon = null;
     this.currentPokemonName = null;
+  }
+
+  getRandomNumber(clickedGeneration: number) {
+    this.resetGame();
     if (this.currentPokemon) {
       (<HTMLInputElement>document.getElementById("guessInput")).value = '';
       this.toggleInputs(false);
@@ -82,9 +86,11 @@ export class GameComponent implements OnInit {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
       this.currentGameState = this.gameStates[2];
       this.showAnswerBool = true;
+      this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
     } else {
+      this.numberOfRights = 0;
       this.numberOfWrongs++;
       this.currentGameState = this.gameStates[3];
     }
