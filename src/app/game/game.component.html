@@ -39,38 +39,55 @@
       </div>
     </div>
 
+    <div class="theGreeting" *ngIf="!currentGameState">
+      <h2 class="greeting">Choose a Generation First!</h2>
+    </div>
+
     <div class="interface">
-      <div *ngIf="!currentGameState">
-        <h2 class="greeting">Choose a Generation First!</h2>
+      <div>
+        <div *ngIf="numberOfWrongs > 0" class="hintBox">
+          <button *ngIf="!theHint" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
+          <p class="theHint" *ngIf="theHint">Pokédex number: {{currentPokemonId}}</p>
+          <p class="theHint" *ngIf="theHint">Type: {{theHint}}</p>
+        </div>
+      </div>
+      <div>
+        <div *ngIf="!currentPokemon && currentPokemonId">
+          <div class="loading">Loading...</div>
+          <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
+        </div>
+  
+        <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
+          <h3>Make a guess</h3>
+          <form (submit)="makeGuess(guess.value); $event.preventDefault()" class="form-inline theGuess">
+            <input #guess id="guessInput" class="form-control">
+            <button id="guessButton" type="submit" class="btn btn-primary">Guess</button>
+          </form>
+        </div>
+  
+        <div *ngIf="currentGameState === 'correctGuess'">
+          <h3>Correct!</h3>
+          <button (click)="nextPokemon()" class="btn btn-success">Next Pokemon</button>
+        </div>
+  
+        <div *ngIf="currentGameState === 'incorrectGuess'">
+          <h3>Wrong</h3>
+          <p class="wrongGuesses" *ngIf="numberOfWrongs > 1">{{numberOfWrongs}} wrong guesses</p>
+          <p class="wrongGuesses" *ngIf="numberOfWrongs === 1">{{numberOfWrongs}} wrong guess</p>
+          <p>You can see the answer or guess again</p>
+          <button (click)="showAnswer()" class="btn btn-info">Show Answer</button>
+        </div>
+  
+        <div *ngIf="currentGameState === 'gaveUp'">
+          <button (click)="gaveUpNext()" class="btn btn-success">Next</button>
+        </div>
       </div>
 
-      <div *ngIf="!currentPokemon && currentPokemonId">
-        <div class="loading">Loading...</div>
-        <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
-      </div>
+      <div class="rightAnswerCounter">
 
-      <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
-        <h3>Make a guess</h3>
-        <form (submit)="makeGuess(guess.value); $event.preventDefault()" class="form-inline theGuess">
-          <input #guess id="guessInput" class="form-control">
-          <button id="guessButton" type="submit" class="btn btn-primary">Guess</button>
-        </form>
       </div>
+      
 
-      <div *ngIf="currentGameState === 'correctGuess'">
-        <h3>Correct!</h3>
-        <button (click)="nextPokemon()" class="btn btn-success">Next Pokemon</button>
-      </div>
-
-      <div *ngIf="currentGameState === 'incorrectGuess'">
-        <h3>Wrong</h3>
-        <p>You can see the answer or guess again</p>
-        <button (click)="showAnswer()" class="btn btn-info">Show Answer</button>
-      </div>
-
-      <div *ngIf="currentGameState === 'gaveUp'">
-        <button (click)="gaveUpNext()" class="btn btn-success">Next</button>
-      </div>
     </div>
   </div>
 </div>

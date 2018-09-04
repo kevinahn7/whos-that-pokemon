@@ -27,17 +27,32 @@ export class GameComponent implements OnInit {
   currentPokemon: object;
   currentPokemonName: string;
   currentPokemonId: string
+  currentPokemonType: string;
   selectedGeneration: number;
   gifNumber: number;
   showAnswerBool: boolean = false;
   theError: object;
   errorMessage: string;
+  numberOfWrongs: number = 0;
+  numberOfRights: number = 0;
+  theHint: string = "";
+  
 
   getGifNumber() {
     this.gifNumber = Math.floor(Math.random() * 21) + 1;
   }
 
+  getHint() {
+    this.theHint = this.currentPokemonType;
+  }
+
+  toggleInputs(bool: boolean) {
+    (<HTMLInputElement> document.getElementById("guessButton")).disabled = bool;
+    (<HTMLInputElement>document.getElementById("guessInput")).disabled = bool;
+  }
+
   getRandomNumber(clickedGeneration: number) {
+    this.numberOfWrongs = 0;
     this.currentGameState = this.gameStates[1];
     this.getGifNumber();
     this.theError = null;
@@ -47,8 +62,7 @@ export class GameComponent implements OnInit {
     this.currentPokemonName = null;
     if (this.currentPokemon) {
       (<HTMLInputElement>document.getElementById("guessInput")).value = '';
-      (<HTMLInputElement> document.getElementById("guessButton")).disabled = false;
-      (<HTMLInputElement>document.getElementById("guessInput")).disabled = false;
+      this.toggleInputs(false);
       document.getElementById(this.currentPokemonId).classList.add("hidden")
     }
     this.pokemonService.createRandomNumberAndPokemon(clickedGeneration).subscribe(data => {
@@ -56,6 +70,7 @@ export class GameComponent implements OnInit {
       this.currentPokemon = data.json();
       this.currentPokemonName = data.json().name;
       this.currentPokemonId = (data.json().id).toString();
+      this.currentPokemonType = (data.json().types[0].type.name)
       console.log(this.currentPokemonName);
     },(err) => {
       this.theError = err;
@@ -68,9 +83,9 @@ export class GameComponent implements OnInit {
       this.currentGameState = this.gameStates[2];
       this.showAnswerBool = true;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
-      (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
-      (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
+      this.toggleInputs(true);
     } else {
+      this.numberOfWrongs++;
       this.currentGameState = this.gameStates[3];
     }
   }
@@ -83,8 +98,7 @@ export class GameComponent implements OnInit {
   showAnswer() {
     this.showAnswerBool = true;
     document.getElementById(this.currentPokemonId).classList.remove("hidden");
-    (<HTMLInputElement> document.getElementById("guessButton")).disabled = true;
-    (<HTMLInputElement>document.getElementById("guessInput")).disabled = true;
+    this.toggleInputs(true);
     this.currentGameState = this.gameStates[4];
   }
 
