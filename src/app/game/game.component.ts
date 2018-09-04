@@ -28,7 +28,6 @@ export class GameComponent implements OnInit {
   currentPokemonName: string;
   currentPokemonId: string
   selectedGeneration: number;
-  madeCorrectGuess: boolean = false;
   gifNumber: number;
   showAnswerBool: boolean = false;
   theError: object;
