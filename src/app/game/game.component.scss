@@ -101,8 +101,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
     }
 }
 
-
-
 .thePokemon {
     width: 270px;
     margin-top: 50px;
@@ -111,7 +109,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 }
 
 .hintBox {
-    padding-top: 30px;
     button {
         width: 70%;
     }
@@ -120,7 +117,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         font-family: 'Press Start 2P', cursive;
     }
 }
-
 
 .hidden {
     -webkit-filter: $hidden-color;
@@ -161,6 +157,10 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 .wrongGuesses {
     margin-bottom: 0;
     font-size: 25px;
+}
+
+.nextButton {
+    width: 50%;
 }
 
 .theStreak {

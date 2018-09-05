@@ -67,7 +67,7 @@
   
         <div *ngIf="currentGameState === 'correctGuess'">
           <h3>Correct!</h3>
-          <button (click)="nextPokemon()" class="btn btn-success">Next Pokemon</button>
+          <button (click)="nextPokemon()" class="btn btn-success nextButton">Next Pokémon</button>
         </div>
   
         <div *ngIf="currentGameState === 'incorrectGuess'">
@@ -78,12 +78,12 @@
         </div>
   
         <div *ngIf="currentGameState === 'gaveUp'">
-          <button (click)="gaveUpNext()" class="btn btn-success">Next</button>
+          <button (click)="gaveUpNext()" class="btn btn-success nextButton">Next</button>
         </div>
       </div>
 
-      <div class="rightAnswerCounter" *ngIf="currentPokemon">
-        <p class="theStreak">PokeStreak Counter!</p>
+      <div *ngIf="currentPokemon">
+        <p class="theStreak">PokeStréak Counter!</p>
         <div *ngIf="numberOfRights > 0">
           <p class="theStreak" *ngIf="numberOfRights === 1">{{numberOfRights}} time right!</p>
           <p class="theStreak" *ngIf="numberOfRights > 1">{{numberOfRights}} times right!</p>
