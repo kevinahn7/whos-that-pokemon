@@ -1,6 +1,27 @@
-# WhosThatPokemon
+# Who's That Pokémon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+#### By Kevin Ahn
+
+## Description
+
+Who's That Pokémon is a web app built with Angular and the Pokéapi to simulate the guessing game featured on the original Pokémon show during the commercial bumpers.
+
+## User Stories
+
+* As a user, I am able to choose which generation I am quizzed on.
+* As a user, I am able to see a Pokémon silhouette and guess which Pokémon that is.
+* As a user, if I am incorrect, I should be able to see a hint.
+* As a user, if I am correct, I should be able to see the full iamge of the Pokémon.
+* As a user, I am able to see how many times I am correct in a row.
+* As a user, I am able to see how many times I am incorrect in a row.
+* As a user, I am able to give up and see the answer after an incorrect guess.
+
+## Technologies Used
+
+* Angular 5
+* BootStrap 4
+* Pokéapi
+* Sass
 
 ## Development server
 
@@ -25,3 +46,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Links
+
+* [Github Repo] (https://github.com/kevinahn7/whos-that-pokemon)
+* [Live Site] (https://whos-that-pokemon-57ff9.firebaseapp.com/)
+
+## License
+
+This software is licensed under the MIT license.
+
+Copyright (c) 2018 **Kevin Ahn**
