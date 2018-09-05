@@ -6,6 +6,9 @@
 
 Who's That Pokémon is a web app built with Angular and the Pokéapi to simulate the guessing game featured on the original Pokémon show during the commercial bumpers.
 
+## Screen Shot
+![Screen shot of the web app](src/assets/screen-shot.PNG)
+
 ## User Stories
 
 * As a user, I am able to choose which generation I am quizzed on.
