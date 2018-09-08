@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { errorResponses } from '../models/errorResponses.models';
 
@@ -8,6 +8,7 @@ import { errorResponses } from '../models/errorResponses.models';
   styleUrls: ['./game.component.scss'],
   providers: [PokemonService]
 })
+
 export class GameComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService) { }

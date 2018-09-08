@@ -19,6 +19,9 @@ Who's That Pokémon is a web app built with Angular and the Pokéapi to simulate
 * As a user, I am able to see how many times I am incorrect in a row.
 * As a user, I am able to give up and see the answer after an incorrect guess.
 
+## Flow chart
+![An image showing the flow chart of this app](src/assets/flowchart.jpg)
+
 ## Technologies Used
 
 * Angular 5

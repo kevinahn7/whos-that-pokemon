@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.app';
 
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
@@ -22,7 +24,9 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
