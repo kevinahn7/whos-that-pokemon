@@ -61,6 +61,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
     }
     .display {
         grid-area: theDisplay;
+        .progress {
+            margin-bottom: 10px;
+        }
         .pokemonDisplay {
             background-image: url("../../assets/pokemon-background.png");
             background-size: contain;

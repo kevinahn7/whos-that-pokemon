@@ -48,13 +48,14 @@
         <mat-button-toggle (click)="getRandomNumber(7)">
           Generation 7
         </mat-button-toggle>
-        
       </mat-button-toggle-group>
-      
     </div>
 
     <div class="display">
       <div class="containingDiv">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" [style.width]= "getPercentage() + '%'" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <div class="pokemonDisplay" *ngIf=currentPokemon>
             <img class="thePokemon hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}" />
             <div *ngIf="showAnswerBool" class="theAnswer">

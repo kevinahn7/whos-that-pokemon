@@ -113,4 +113,8 @@ export class GameComponent implements OnInit {
     this.currentGameState = this.gameStates[1];
     this.getRandomNumber(this.selectedGeneration);
   }
+
+  getPercentage() {
+    return Math.trunc((this.numberOfRights/44)*100);
+  }
 }
