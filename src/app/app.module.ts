@@ -10,6 +10,7 @@ import { MaterialModule } from './material.app';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { ErrorComponent } from './error/error.component';
+import { StreakComponent } from './streak/streak.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     GameComponent,
-    ErrorComponent
+    ErrorComponent,
+    StreakComponent
   ],
   imports: [
     BrowserModule,

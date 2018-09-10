@@ -22,7 +22,7 @@ export class PokemonService {
   }
 
   createRandomPokemon(randomNumber: number) {
-    return this.http.get(`https://pokeapi.co/api/v2/pkemon/${randomNumber}/`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`)
     .catch((error) => {
       return Observable.throw(error);
     });

@@ -109,11 +109,7 @@
       </div>
 
       <div *ngIf="currentPokemon">
-        <p class="theStreak">PokeStréak Counter!</p>
-        <div *ngIf="numberOfRights > 0">
-          <p class="theStreak" *ngIf="numberOfRights === 1">{{numberOfRights}} time right!</p>
-          <p class="theStreak" *ngIf="numberOfRights > 1">{{numberOfRights}} times right!</p>
-        </div>
+        <app-streak [numberOfRights]="numberOfRights"></app-streak>
       </div>
       
 
