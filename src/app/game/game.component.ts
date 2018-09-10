@@ -54,7 +54,7 @@ export class GameComponent implements OnInit {
   theError: object;
   errorMessage: string;
   numberOfWrongs: number = 0;
-  numberOfRights: number = 35;
+  numberOfRights: number = 0;
   theHint: string = "";
   
   getGifNumber() {
