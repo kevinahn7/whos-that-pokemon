@@ -53,11 +53,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         background-color: rgba(255,255,255,0.5);
         padding: 20px;
         height: 450px;
-        h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
     }
     .display {
         grid-area: theDisplay;
@@ -102,12 +97,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-mat-button-toggle {
-    background-color: rgb(173, 173, 173);
-    font-family: 'Lato', sans-serif;
-    color: white;
 }
 
 .thePokemon {

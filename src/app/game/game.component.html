@@ -2,53 +2,7 @@
   <h1 class="mainHeader">Who's That Pokémon!</h1>
   <div class="layout">
     <div class="generations">
-      <h2>Pick your Generation:</h2>
-      <!-- <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
-        <div class="radio">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(1)">Generation 1</label>
-        </div>
-        <div class="radio">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(2)">Generation 2</label>
-        </div>
-        <div class="radio disabled">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(3)">Generation 3</label>
-        </div>
-        <div class="radio disabled">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(4)">Generation 4</label>
-        </div>
-        <div class="radio disabled">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(5)">Generation 5</label>
-        </div>
-        <div class="radio disabled">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(6)">Generation 6</label>
-        </div>
-        <div class="radio disabled">
-          <label class="btn btn-secondary"><input type="radio" name="generation" (click)="getRandomNumber(7)">Generation 7</label>
-        </div>
-      </div> -->
-      <mat-button-toggle-group vertical>
-        <mat-button-toggle (click)="getRandomNumber(1)">
-          Generation 1
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(2)">
-          Generation 2
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(3)">
-          Generation 3
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(4)">
-          Generation 4
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(5)">
-          Generation 5
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(6)">
-          Generation 6
-        </mat-button-toggle>
-        <mat-button-toggle (click)="getRandomNumber(7)">
-          Generation 7
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <app-generation-buttons (clickSender)="getRandomNumber($event)"></app-generation-buttons>
     </div>
 
     <div class="display">
@@ -82,7 +36,7 @@
         </div>
   
         <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
-          <app-make-guess (clickSender)="makeGuess()"></app-make-guess>
+          <app-make-guess (clickSender)="makeGuess($event)"></app-make-guess>
         </div>
   
         <div *ngIf="currentGameState === 'correctGuess'">
