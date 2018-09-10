@@ -13,6 +13,7 @@ import { ErrorComponent } from './error/error.component';
 import { StreakComponent } from './streak/streak.component';
 import { WrongGuessComponent } from './wrong-guess/wrong-guess.component';
 import { HintComponent } from './hint/hint.component';
+import { RightGuessComponent } from './right-guess/right-guess.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     ErrorComponent,
     StreakComponent,
     WrongGuessComponent,
-    HintComponent
+    HintComponent,
+    RightGuessComponent
   ],
   imports: [
     BrowserModule,

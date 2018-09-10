@@ -90,8 +90,7 @@
         </div>
   
         <div *ngIf="currentGameState === 'correctGuess'">
-          <h3>Correct!</h3>
-          <button id="theNextButton" (click)="nextPokemon()" class="btn btn-success nextButton">Next Pokémon</button>
+         <app-right-guess (clickSender)="nextPokemon()"></app-right-guess>
         </div>
   
         <div *ngIf="currentGameState === 'incorrectGuess'">
