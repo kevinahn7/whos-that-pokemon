@@ -82,15 +82,11 @@
         </div>
   
         <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
-          <h3>Make a guess</h3>
-          <form (submit)="makeGuess(guess.value); $event.preventDefault()" class="form-inline theGuess">
-            <input #guess id="guessInput" class="form-control">
-            <button id="guessButton" type="submit" class="btn btn-primary">Guess</button>
-          </form>
+          <app-make-guess (clickSender)="makeGuess()"></app-make-guess>
         </div>
   
         <div *ngIf="currentGameState === 'correctGuess'">
-         <app-right-guess (clickSender)="nextPokemon()"></app-right-guess>
+          <app-right-guess (clickSender)="nextPokemon()"></app-right-guess>
         </div>
   
         <div *ngIf="currentGameState === 'incorrectGuess'">

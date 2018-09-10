@@ -142,17 +142,6 @@ mat-button-toggle {
     width: 270px;
 }
 
-.theGuess {
-    display: block;
-    margin: 0 auto;
-    input {
-        margin-bottom: 5px;
-    }
-    button {
-        margin-bottom: 5px;
-    }
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
