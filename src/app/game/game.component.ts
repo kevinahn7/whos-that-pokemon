@@ -1,6 +1,8 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { errorResponses } from '../models/errorResponses.models';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-game',
@@ -11,7 +13,10 @@ import { errorResponses } from '../models/errorResponses.models';
 
 export class GameComponent implements OnInit {
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(
+    private pokemonService: PokemonService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.getGifNumber();
@@ -22,6 +27,20 @@ export class GameComponent implements OnInit {
     2: "correctGuess",
     3: "incorrectGuess",
     4: "gaveUp"
+  }
+
+  dialogs = {
+    3: "first",
+    6: "second",
+    9: "third",
+    12: "fourth",
+    15: "sixth",
+    18: "seventh",
+    21: "eigth",
+    26: "elite one",
+    31: "elite two",
+    36: "elite three",
+    41: "elite four and win"
   }
 
   currentGameState: string;
@@ -35,7 +54,7 @@ export class GameComponent implements OnInit {
   theError: object;
   errorMessage: string;
   numberOfWrongs: number = 0;
-  numberOfRights: number = 0;
+  numberOfRights: number = 35;
   theHint: string = "";
   
   getGifNumber() {
@@ -90,6 +109,9 @@ export class GameComponent implements OnInit {
       this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
+      if (this.dialogs[this.numberOfRights]) {
+        this.openDialog();
+      }
     } else {
       this.numberOfRights = 0;
       this.numberOfWrongs++;
@@ -115,6 +137,17 @@ export class GameComponent implements OnInit {
   }
 
   getPercentage() {
-    return Math.trunc((this.numberOfRights/44)*100);
+    return Math.trunc((this.numberOfRights/41)*100);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '400px',
+      data: {numberOfRights: this.numberOfRights}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
   }
 }

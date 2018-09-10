@@ -16,6 +16,7 @@ import { HintComponent } from './hint/hint.component';
 import { RightGuessComponent } from './right-guess/right-guess.component';
 import { MakeGuessComponent } from './make-guess/make-guess.component';
 import { GenerationButtonsComponent } from './generation-buttons/generation-buttons.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,13 +35,17 @@ export const firebaseConfig = {
     HintComponent,
     RightGuessComponent,
     MakeGuessComponent,
-    GenerationButtonsComponent
+    GenerationButtonsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
