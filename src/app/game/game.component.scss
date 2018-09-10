@@ -117,16 +117,6 @@ mat-button-toggle {
     transition: 0.5s;
 }
 
-.hintBox {
-    button {
-        width: 70%;
-    }
-    .theHint {
-        font-size: 20px;
-        font-family: 'Press Start 2P', cursive;
-    }
-}
-
 .hidden {
     -webkit-filter: $hidden-color;
     filter: $hidden-color;

@@ -72,9 +72,7 @@
     <div class="interface">
       <div>
         <div *ngIf="currentPokemon && !showAnswerBool" class="hintBox">
-          <button *ngIf="!theHint" id="hintButton" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
-          <p class="theHint" *ngIf="theHint">Pokédex number: {{currentPokemonId}}</p>
-          <p class="theHint" *ngIf="theHint">Type: {{theHint}}</p>
+          <app-hint [currentPokemonId]="currentPokemonId" [theHint]="theHint" (clickSender)="getHint()"></app-hint>
         </div>
       </div>
       <div>

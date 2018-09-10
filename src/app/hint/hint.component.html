@@ -1,0 +1,3 @@
+<button *ngIf="!theHint" id="hintButton" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
+<p class="theHint" *ngIf="theHint">Pokédex number: {{currentPokemonId}}</p>
+<p class="theHint" *ngIf="theHint">Type: {{theHint}}</p>
