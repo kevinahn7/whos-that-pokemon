@@ -177,17 +177,6 @@ mat-button-toggle {
     font-size: 20px;
 }
 
-.errorMessage {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    font-size: 30px;
-}
-
-.errorImage {
-    display: block;
-    margin: 40px auto;
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

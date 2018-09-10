@@ -52,11 +52,11 @@
     </div>
 
     <div class="display">
-      <div class="containingDiv">
+      <div class="containingDiv" *ngIf=currentPokemon>
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar" [style.width]= "getPercentage() + '%'" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <div class="pokemonDisplay" *ngIf=currentPokemon>
+        <div class="pokemonDisplay">
             <img class="thePokemon hidden" id="{{currentPokemon.id}}"src="{{currentPokemon.sprites.front_default}}" />
             <div *ngIf="showAnswerBool" class="theAnswer">
               <h3>{{currentPokemonName}}</h3>
@@ -72,7 +72,7 @@
     <div class="interface">
       <div>
         <div *ngIf="currentPokemon && !showAnswerBool" class="hintBox">
-          <button *ngIf="!theHint" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
+          <button *ngIf="!theHint" id="hintButton" (click)="getHint()" class="btn btn-secondary btn-lg">Hint</button>
           <p class="theHint" *ngIf="theHint">Pokédex number: {{currentPokemonId}}</p>
           <p class="theHint" *ngIf="theHint">Type: {{theHint}}</p>
         </div>
@@ -93,7 +93,7 @@
   
         <div *ngIf="currentGameState === 'correctGuess'">
           <h3>Correct!</h3>
-          <button (click)="nextPokemon()" class="btn btn-success nextButton">Next Pokémon</button>
+          <button id="theNextButton" (click)="nextPokemon()" class="btn btn-success nextButton">Next Pokémon</button>
         </div>
   
         <div *ngIf="currentGameState === 'incorrectGuess'">
@@ -122,7 +122,5 @@
 </div>
 
 <ng-template #errorPresent>
-  <img src="../../assets/error.gif" class="errorImage"/>
-  <p class="errorMessage">There is a {{theError.status}} error</p>
-  <p class="errorMessage">{{errorMessage}}</p>
+  <app-error [errorMessage]="errorMessage" [theError]="theError"></app-error>
 </ng-template>

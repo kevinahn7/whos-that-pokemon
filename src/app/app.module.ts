@@ -9,6 +9,7 @@ import { MaterialModule } from './material.app';
 
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
+import { ErrorComponent } from './error/error.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -20,7 +21,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent
+    GameComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
