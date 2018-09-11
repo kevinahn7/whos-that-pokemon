@@ -8,8 +8,9 @@ html {
 body {
     background-image: url("assets/background.jpg");
     background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-repeat: no-repeat;
+    background-position: center;
     font-family: 'Lato', sans-serif;
 }
 
@@ -19,7 +20,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-	background-color: #F90;	
+	background-color: #F90;
 	background-image: -webkit-linear-gradient(45deg,
 	                                          rgba(255, 255, 255, .2) 25%,
 											  transparent 25%,

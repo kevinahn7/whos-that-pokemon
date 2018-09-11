@@ -4,8 +4,24 @@ h2 {
     margin-bottom: 20px;
 }
 
-mat-button-toggle {
-    background-color: rgb(173, 173, 173);
-    font-family: 'Lato', sans-serif;
-    color: white;
+mat-button-toggle-group {
+    box-shadow: none;
+    mat-button-toggle {
+        background-color: rgb(173, 173, 173);
+        font-family: 'Lato', sans-serif;
+        color: white;
+        width: 200px;
+        margin-bottom: 10px;
+        .mat-button-toggle-label-content {
+          padding: 19px;
+        }
+    }
 }
+
+span {
+    padding: 5px 30px;
+}
+
+
+
+//fix these buttons
