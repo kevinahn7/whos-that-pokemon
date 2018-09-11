@@ -6,7 +6,6 @@ import {  Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./hint.component.scss']
 })
 export class HintComponent implements OnInit {
-  @Input() currentPokemonId: number;
   @Input() theHint: string;
   @Output() clickSender = new EventEmitter();
 

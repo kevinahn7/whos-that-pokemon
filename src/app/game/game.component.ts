@@ -23,10 +23,10 @@ export class GameComponent implements OnInit {
   }
 
   gameStates = {
-    1: "initial",
-    2: "correctGuess",
-    3: "incorrectGuess",
-    4: "gaveUp"
+    "initial": 1,
+    "correctGuess": 2,
+    "incorrectGuess": 3,
+    "gaveUp": 4
   }
 
   dialogs = {
@@ -56,13 +56,13 @@ export class GameComponent implements OnInit {
   numberOfWrongs: number = 0;
   numberOfRights: number = 0;
   theHint: string = "";
-  
+
   getGifNumber() {
     this.gifNumber = Math.floor(Math.random() * 21) + 1;
   }
 
   getHint() {
-    this.theHint = this.currentPokemonType;
+    this.theHint = this.currentPokemonName[0].toUpperCase();
   }
 
   toggleInputs(bool: boolean) {
@@ -72,7 +72,7 @@ export class GameComponent implements OnInit {
 
   resetGame() {
     this.numberOfWrongs = 0;
-    this.currentGameState = this.gameStates[1];
+    this.currentGameState = this.gameStates["initial"];
     this.getGifNumber();
     this.theError = null;
     this.currentPokemonId = "1";
@@ -104,7 +104,7 @@ export class GameComponent implements OnInit {
 
   makeGuess(nameGuess: string) {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
-      this.currentGameState = this.gameStates[2];
+      this.currentGameState = this.gameStates["correctGuess"];
       this.showAnswerBool = true;
       this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
@@ -115,12 +115,12 @@ export class GameComponent implements OnInit {
     } else {
       this.numberOfRights = 0;
       this.numberOfWrongs++;
-      this.currentGameState = this.gameStates[3];
+      this.currentGameState = this.gameStates["incorrectGuess"];
     }
   }
 
   nextPokemon() {
-    this.currentGameState = this.gameStates[1];
+    this.currentGameState = this.gameStates["initial"];
     this.getRandomNumber(this.selectedGeneration);
   }
 
@@ -128,11 +128,11 @@ export class GameComponent implements OnInit {
     this.showAnswerBool = true;
     document.getElementById(this.currentPokemonId).classList.remove("hidden");
     this.toggleInputs(true);
-    this.currentGameState = this.gameStates[4];
+    this.currentGameState = this.gameStates["gaveUp"];
   }
 
   gaveUpNext() {
-    this.currentGameState = this.gameStates[1];
+    this.currentGameState = this.gameStates["initial"];
     this.getRandomNumber(this.selectedGeneration);
   }
 

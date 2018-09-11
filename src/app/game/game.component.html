@@ -27,7 +27,7 @@
     <div class="interface">
       <div>
         <div *ngIf="currentPokemon && !showAnswerBool" class="hintBox">
-          <app-hint [currentPokemonId]="currentPokemonId" [theHint]="theHint" (clickSender)="getHint()"></app-hint>
+          <app-hint [theHint]="theHint" (clickSender)="getHint()"></app-hint>
         </div>
       </div>
       <div>
@@ -36,19 +36,19 @@
           <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
         </div>
 
-        <div *ngIf="currentPokemon && currentGameState !== 'gaveUp'">
+        <div *ngIf="currentPokemon && currentGameState !== 4">
           <app-make-guess (clickSender)="makeGuess($event)"></app-make-guess>
         </div>
 
-        <div *ngIf="currentGameState === 'correctGuess'">
+        <div *ngIf="currentGameState === 2">
           <app-right-guess (clickSender)="nextPokemon()"></app-right-guess>
         </div>
 
-        <div *ngIf="currentGameState === 'incorrectGuess'">
+        <div *ngIf="currentGameState === 3">
           <app-wrong-guess [numberOfWrongs]="numberOfWrongs" (clickSender)="showAnswer()"></app-wrong-guess>
         </div>
 
-        <div *ngIf="currentGameState === 'gaveUp'">
+        <div *ngIf="currentGameState === 4">
           <button (click)="gaveUpNext()" class="btn btn-success nextButton">Next</button>
         </div>
       </div>
