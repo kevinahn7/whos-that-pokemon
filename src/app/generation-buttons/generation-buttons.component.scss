@@ -12,9 +12,6 @@ mat-button-toggle-group {
         color: white;
         width: 200px;
         margin-bottom: 10px;
-        .mat-button-toggle-label-content {
-          padding: 19px;
-        }
     }
 }
 
@@ -22,6 +19,28 @@ span {
     padding: 0 35px;
 }
 
+@media screen and (max-width: 1160px) {
+  h2 {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
 
+  mat-button-toggle-group {
+    mat-button-toggle {
+      width: 130px;
+    }
+  }
 
-//fix these buttons
+  span {
+      padding: 0;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  mat-button-toggle-group {
+    width: 100%;
+    mat-button-toggle {
+      width: 100%;
+    }
+  }
+}

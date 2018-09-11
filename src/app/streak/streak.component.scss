@@ -1,5 +1,36 @@
-.theStreak {
+.theStreakHeader, .theStreak {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
     margin-top: 30px;
+}
+
+@media screen and (max-width: 850px) {
+  .theStreakHeader, .theStreak {
+    font-size: 14px;
+    margin-top: 38px;
+  }
+
+  .theStreak {
+    font-size: 12px;
+    margin-top: 20px
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .theStreakHeader {
+    font-size: 12px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .theStreakHeader {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .theStreak {
+    font-size: 10px;
+    margin-top: 10px;
+  }
 }
