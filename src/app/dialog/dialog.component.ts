@@ -14,20 +14,65 @@ export class DialogComponent implements OnInit {
   numberOfRights: number;
 
   gyms = {
-    3: "first",
-    6: "second",
-    9: "third",
-    12: "fourth",
-    15: "sixth",
-    18: "seventh",
-    21: "eigth"
+    3: {
+      name: "Boulder",
+      city: "Pewter",
+      order: "first"
+    },
+    6: {
+      name: "Cascade",
+      city: "Cerulean",
+      order: "second"
+    },
+    9: {
+      name: "Thunder",
+      city: "Vermillion",
+      order: "third"
+    },
+    12: {
+      name: "Rainbow",
+      city: "Celadon",
+      order: "fourth"
+    },
+    15: {
+      name: "Soul",
+      city: "Fuchsia",
+      order: "fifth"
+    },
+    18: {
+      name: "Marsh",
+      city: "Saffron",
+      order: "sixth"
+    },
+    21: {
+      name: "Volcano",
+      city: "Cinnabar",
+      order: "seventh"
+    }
+    24: {
+      name: "Earth",
+      city: "Viridian",
+      order: "eigth"
+    }
   }
 
   elite = {
-    26: "first",
-    31: "second",
-    36: "third",
-    41: "fourth"
+    29: {
+      name: "Lorelei",
+      order: "first"
+    },
+    34: {
+      name: "Bruno",
+      order: "second"
+    },
+    39: {
+      name: "Agatha",
+      order: "third"
+    },
+    44: {
+      name: "Lance",
+      order: "fourth"
+    }
   }
 
   ngOnInit() {
@@ -35,5 +80,3 @@ export class DialogComponent implements OnInit {
   }
 
 }
-
-

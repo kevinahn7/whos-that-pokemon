@@ -137,7 +137,7 @@ export class GameComponent implements OnInit {
   }
 
   getPercentage() {
-    return Math.trunc((this.numberOfRights/41)*100);
+    return Math.trunc((this.numberOfRights/44)*100);
   }
 
   openDialog(): void {
