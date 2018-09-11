@@ -6,3 +6,12 @@
 .showAnswerButton {
   width: 100%;
 }
+
+@media screen and (max-width: 720px) {
+  .wrongGuesses {
+    font-size: 20px;
+  }
+  p {
+   font-size: 13px;
+ }
+}

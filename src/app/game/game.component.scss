@@ -243,11 +243,13 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         width: 400px;
         height: 250px;
         .thePokemon {
-          width: 120px;
+          width: 140px;
+          margin-top: 30px;
+          margin-left: 50px;
         }
         .theAnswer {
           h3 {
-            font-size: 20px;
+            font-size: 23px;
           }
         }
       }
@@ -266,6 +268,7 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
       font-size: 20px;
   }
 }
+
 @media screen and (max-width: 450px) {
   .layout {
     .display {
@@ -277,6 +280,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         height: 200px;
         .thePokemon {
           width: 120px;
+        }
+        h3 {
+          margin-top: 50px;
         }
       }
     }
