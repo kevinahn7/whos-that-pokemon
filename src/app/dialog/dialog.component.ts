@@ -48,7 +48,7 @@ export class DialogComponent implements OnInit {
       name: "Volcano",
       city: "Cinnabar",
       order: "seventh"
-    }
+    },
     24: {
       name: "Earth",
       city: "Viridian",

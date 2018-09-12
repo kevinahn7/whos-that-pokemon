@@ -43,7 +43,7 @@ export class GameComponent implements OnInit {
     41: "elite four and win"
   }
 
-  currentGameState: string;
+  currentGameState: number;
   currentPokemon: object;
   currentPokemonName: string;
   currentPokemonId: string
