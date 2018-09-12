@@ -55,7 +55,7 @@ export class GameComponent implements OnInit {
   theError: object;
   errorMessage: string;
   numberOfWrongs: number = 0;
-  numberOfRights: number = 24;
+  numberOfRights: number = 0;
   theHint: string = "";
 
   getGifNumber() {
@@ -107,7 +107,7 @@ export class GameComponent implements OnInit {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
       this.currentGameState = this.gameStates["correctGuess"];
       this.showAnswerBool = true;
-      this.numberOfRights+=5;
+      this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
       if (this.dialogs[this.numberOfRights]) this.openDialog();
