@@ -1,4 +1,4 @@
-<div *ngIf="numberOfRights < 22">
+<div *ngIf="numberOfRights < 25">
   <h1>You beat the {{gyms[numberOfRights].order}} gym, {{gyms[numberOfRights].city}} gym!</h1>
   <img class="pokemonGyms" src="../../assets/{{gyms[numberOfRights].order}}.png" />
   <p>The {{gyms[numberOfRights].name}} badge</p>
@@ -6,12 +6,12 @@
 
 <div *ngIf="numberOfRights > 25 && numberOfRights < 44 ">
   <h1>You beat {{elite[numberOfRights].name}}, the {{elite[numberOfRights].order}} member of the Elite Four</h1>
-  <img class="eliteFour" src="../../assets/elite{{elite[numberOfRights][order]}}.png" />
+  <img class="eliteFour" src="../../assets/elite{{elite[numberOfRights].order}}.png" />
 </div>
 
 <div *ngIf="numberOfRights === 44 ">
   <h1>Congratulations</h1>
   <h1>You beat {{elite[numberOfRights].name}}, the {{elite[numberOfRights].order}} and final member of the Elite Four!</h1>
   <h2>You are the Pokémon Master!</h2>
-  <img class="lance" src="../../assets/elite{{elite[numberOfRights]}}.png" />
+  <img class="lance" src="../../assets/elite{{elite[numberOfRights].order}}.png" />
 </div>

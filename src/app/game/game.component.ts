@@ -34,13 +34,14 @@ export class GameComponent implements OnInit {
     6: "second",
     9: "third",
     12: "fourth",
-    15: "sixth",
-    18: "seventh",
-    21: "eigth",
-    26: "elite one",
-    31: "elite two",
-    36: "elite three",
-    41: "elite four and win"
+    15: "fifth",
+    18: "sixth",
+    21: "seventh",
+    24: "eight",
+    29: "elite one",
+    34: "elite two",
+    39: "elite three",
+    44: "elite four and win"
   }
 
   currentGameState: number;
@@ -54,7 +55,7 @@ export class GameComponent implements OnInit {
   theError: object;
   errorMessage: string;
   numberOfWrongs: number = 0;
-  numberOfRights: number = 0;
+  numberOfRights: number = 39;
   theHint: string = "";
 
   getGifNumber() {
@@ -106,12 +107,10 @@ export class GameComponent implements OnInit {
     if (this.currentPokemonName.toLowerCase() === nameGuess.toLowerCase()) {
       this.currentGameState = this.gameStates["correctGuess"];
       this.showAnswerBool = true;
-      this.numberOfRights++;
+      this.numberOfRights+=5;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
-      if (this.dialogs[this.numberOfRights]) {
-        this.openDialog();
-      }
+      if (this.dialogs[this.numberOfRights]) this.openDialog();
     } else {
       this.numberOfRights = 0;
       this.numberOfWrongs++;
@@ -141,13 +140,9 @@ export class GameComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    this.dialog.open(DialogComponent, {
       width: '400px',
       data: {numberOfRights: this.numberOfRights}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-
     });
   }
 }
