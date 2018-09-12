@@ -30,7 +30,7 @@
           <app-hint [theHint]="theHint" (clickSender)="getHint()"></app-hint>
         </div>
       </div>
-      <div>
+      <div class="guessBox">
         <div *ngIf="!currentPokemon && currentPokemonId">
           <div class="loading">Loading...</div>
           <img src="../../assets/loading{{gifNumber}}.gif" class="loadingGif"/>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div *ngIf="currentPokemon">
+      <div *ngIf="currentPokemon" class="streakBox">
         <app-streak [numberOfRights]="numberOfRights"></app-streak>
       </div>
 

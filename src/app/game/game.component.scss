@@ -105,8 +105,19 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         text-align: center;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+          "hint guess streak";
         max-width: 800px;
         margin: 0 auto;
+        .hintBox {
+          grid-area: hint;
+        }
+        .guessBox {
+          grid-area: guess;
+        }
+        .streakBox {
+          grid-area: streak;
+        }
     }
 }
 
@@ -212,10 +223,13 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
     }
     .display {
       padding-top: 10px;
-      .thePokemon {
+      .pokemonDisplay {
+
+        .thePokemon {
           width: 240px;
-          margin-top: 40px;
-          margin-left: 60px;
+          margin-top: 35px;
+          margin-left: 55px;
+        }
       }
     }
     .interface {
@@ -241,7 +255,7 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
       }
       .pokemonDisplay {
         width: 400px;
-        height: 250px;
+        height: 230px;
         .thePokemon {
           width: 140px;
           margin-top: 30px;
@@ -255,8 +269,13 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
       }
     }
     .interface {
-      max-width: 420px;
+      max-width: 400px;
       grid-gap: 5px;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "guess"
+        "hint"
+        "streak";
     }
   }
 
@@ -283,12 +302,73 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         }
         h3 {
           margin-top: 50px;
+          font-size: 17px;
         }
       }
     }
     .interface {
       max-width: 370px;
       grid-gap: 5px;
+      .loading {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .loadingGif {
+          width: 230px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .layout {
+    .display {
+      .progress {
+        width: 300px;
+      }
+      .pokemonDisplay {
+        width: 300px;
+        height: 170px;
+        .thePokemon {
+          width: 100px;
+          margin-left: 30px;
+        }
+        .theAnswer {
+          h3 {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .interface {
+      max-width: 300px;
+      grid-gap: 3px;
+    }
+  }
+  .generations {
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .layout {
+    .display {
+      .progress {
+        width: 250px;
+      }
+      .pokemonDisplay {
+        width: 250px;
+        height: 150px;
+        .thePokemon {
+          margin-top: 10px;
+          margin-left: 20px;
+        }
+      }
+    }
+    .interface {
+      max-width: 250px;
+      grid-gap: 3px;
     }
   }
 }
