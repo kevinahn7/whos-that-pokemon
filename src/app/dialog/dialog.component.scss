@@ -18,3 +18,35 @@ img {
 h2 {
     font-family: 'Press Start 2P', cursive;
 }
+
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .eliteFour {
+        width: 250px;
+    }
+    .lance {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .eliteFour {
+        width: 185px;
+    }
+    .lance {
+        width: 150px;
+    }
+}
