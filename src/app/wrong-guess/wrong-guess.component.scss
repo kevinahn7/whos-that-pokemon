@@ -1,17 +1,23 @@
-.wrongGuesses {
-    margin-bottom: 0;
-    font-size: 25px;
+div {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    border-radius: 5%;
+    .wrongGuesses {
+        margin-bottom: 0;
+        font-size: 25px;
+    }
 }
 
+
 .showAnswerButton {
-  width: 100%;
+    width: 100%;
 }
 
 @media screen and (max-width: 720px) {
-  .wrongGuesses {
-    font-size: 20px;
-  }
-  p {
-   font-size: 13px;
- }
+    .wrongGuesses {
+        font-size: 20px;
+    }
+    p {
+        font-size: 13px;
+    }
 }

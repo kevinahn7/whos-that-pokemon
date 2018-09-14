@@ -1,4 +1,6 @@
-<p class="wrongGuesses" *ngIf="numberOfWrongs > 1">{{numberOfWrongs}} wrong guesses</p>
-<p class="wrongGuesses" *ngIf="numberOfWrongs === 1">{{numberOfWrongs}} wrong guess</p>
-<p>You can see the answer or guess again</p>
+<div>
+    <p class="wrongGuesses" *ngIf="numberOfWrongs > 1">{{numberOfWrongs}} wrong guesses</p>
+    <p class="wrongGuesses" *ngIf="numberOfWrongs === 1">{{numberOfWrongs}} wrong guess</p>
+    <p>You can see the answer or guess again</p>
+</div>
 <button (click)="showAnswer()" class="btn btn-info showAnswerButton">Show Answer</button>

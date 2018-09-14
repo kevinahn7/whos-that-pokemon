@@ -42,8 +42,8 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
     color: #FFCB05;
     letter-spacing: 5px;
     text-shadow: $blue-border;
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin-top: 40px;
+    margin-bottom: 20px;
     font-size: 70px;
 }
 
@@ -255,7 +255,6 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         .display {
             padding-top: 10px;
             .pokemonDisplay {
-
                 .thePokemon {
                     width: 240px;
                     margin-top: 35px;
@@ -270,6 +269,8 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 
     .mainHeader {
         font-size: 50px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     .greeting {
