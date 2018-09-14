@@ -20,33 +20,33 @@ span {
 }
 
 @media screen and (max-width: 1160px) {
-  h2 {
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  mat-button-toggle-group {
-    mat-button-toggle {
-      width: 130px;
+    h2 {
+        font-size: 15px;
+        margin-bottom: 15px;
     }
-  }
 
-  span {
-      padding: 0;
-  }
+    mat-button-toggle-group {
+        mat-button-toggle {
+           width: 130px;
+        }
+    }
+
+    span {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 850px) {
-  mat-button-toggle-group {
-    width: 100%;
-    mat-button-toggle {
-      width: 100%;
+    mat-button-toggle-group {
+        width: 100%;
+        mat-button-toggle {
+            width: 100%;
+        }
     }
-  }
 }
 
 @media screen and (max-width: 410px) {
-  h2 {
-    font-size: 12px;
-  }
+    h2 {
+        font-size: 12px;
+    }
 }

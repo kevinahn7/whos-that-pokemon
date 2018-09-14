@@ -106,17 +106,17 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-          "hint guess streak";
+            "hint guess streak";
         max-width: 800px;
         margin: 0 auto;
         .hintBox {
-          grid-area: hint;
+            grid-area: hint;
         }
         .guessBox {
-          grid-area: guess;
+            grid-area: guess;
         }
         .streakBox {
-          grid-area: streak;
+            grid-area: streak;
         }
     }
 }
@@ -152,244 +152,244 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
 }
 
 @keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-      opacity: 0;
-  }
-  100% {
-      transform: rotate(360deg);
-      opacity: 1;
-  }
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-      opacity: 0;
-  }
-  100% {
-      transform: rotate(360deg);
-      opacity: 1;
-  }
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-      opacity: 0;
-  }
-  100% {
-      transform: rotate(360deg);
-      opacity: 1;
-  }
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
 @-ms-keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-      opacity: 0;
-  }
-  100% {
-      transform: rotate(360deg);
-      opacity: 1;
-  }
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 1160px) {
-  .layout {
-    grid-template-columns: 200px auto;
-  }
+    .layout {
+        grid-template-columns: 200px auto;
+    }
 
-  .greeting {
-      font-size: 45px;
-  }
+    .greeting {
+        font-size: 45px;
+    }
 }
 
 @media screen and (max-width: 960px) {
-  .layout {
-    .display {
-      .progress {
-        width: 600px;
-      }
-      .pokemonDisplay {
-        width: 600px;
-        height: 350px;
-        .theAnswer {
-          h3 {
-            font-size: 40px;
-          }
+    .layout {
+        .display {
+            .progress {
+                width: 600px;
+            }
+            .pokemonDisplay {
+                width: 600px;
+                height: 350px;
+                .theAnswer {
+                    h3 {
+                        font-size: 40px;
+                    }
+                }
+            }
         }
-      }
+        .interface {
+            max-width: 750px;
+        }
     }
-    .interface {
-      max-width: 750px;
-    }
-  }
 
-  .greeting {
-      font-size: 40px;
-  }
+    .greeting {
+        font-size: 40px;
+    }
 }
 
 @media screen and (max-width: 850px) {
-  .layout {
-    grid-template-areas:
-        "greeting"
-        "generations"
-        "theDisplay"
-        "interface";
-    grid-template-columns: 100%;
-    .generations {
-      height: 460px;
-    }
-    .display {
-      padding-top: 10px;
-      .pokemonDisplay {
-
-        .thePokemon {
-          width: 240px;
-          margin-top: 35px;
-          margin-left: 55px;
+    .layout {
+        grid-template-areas:
+            "greeting"
+            "generations"
+            "theDisplay"
+            "interface";
+        grid-template-columns: 100%;
+        .generations {
+            height: 460px;
         }
-      }
-    }
-    .interface {
-      width: 670px;
-    }
-  }
+        .display {
+            padding-top: 10px;
+            .pokemonDisplay {
 
-  .mainHeader {
-      font-size: 50px;
-  }
+                .thePokemon {
+                    width: 240px;
+                    margin-top: 35px;
+                    margin-left: 55px;
+                }
+            }
+        }
+        .interface {
+            width: 670px;
+        }
+    }
 
-  .greeting {
-      font-size: 30px;
-      margin: 10px auto;
-  }
+    .mainHeader {
+        font-size: 50px;
+    }
+
+    .greeting {
+        font-size: 30px;
+        margin: 10px auto;
+    }
 }
 
 @media screen and (max-width: 720px) {
-  .layout {
-    .display {
-      .progress {
-        width: 400px;
-      }
-      .pokemonDisplay {
-        width: 400px;
-        height: 230px;
-        .thePokemon {
-          width: 140px;
-          margin-top: 30px;
-          margin-left: 50px;
+    .layout {
+        .display {
+            .progress {
+                width: 400px;
+            }
+            .pokemonDisplay {
+                width: 400px;
+                height: 230px;
+                .thePokemon {
+                    width: 140px;
+                    margin-top: 30px;
+                    margin-left: 50px;
+                }
+                .theAnswer {
+                    h3 {
+                        font-size: 23px;
+                    }
+                }
+            }
         }
-        .theAnswer {
-          h3 {
-            font-size: 23px;
-          }
+        .interface {
+            max-width: 400px;
+            grid-gap: 5px;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+              "guess"
+              "hint"
+              "streak";
         }
-      }
     }
-    .interface {
-      max-width: 400px;
-      grid-gap: 5px;
-      grid-template-columns: 1fr;
-      grid-template-areas: 
-        "guess"
-        "hint"
-        "streak";
+
+    .mainHeader {
+        font-size: 40px;
     }
-  }
 
-  .mainHeader {
-      font-size: 40px;
-  }
-
-  .greeting {
-      font-size: 20px;
-  }
+    .greeting {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 450px) {
-  .layout {
-    .display {
-      .progress {
-        width: 350px;
-      }
-      .pokemonDisplay {
-        width: 350px;
-        height: 200px;
-        .thePokemon {
-          width: 120px;
+    .layout {
+        .display {
+            .progress {
+                width: 350px;
+            }
+            .pokemonDisplay {
+                width: 350px;
+                height: 200px;
+                .thePokemon {
+                    width: 120px;
+                }
+                h3 {
+                    margin-top: 50px;
+                    font-size: 17px;
+                }
+            }
         }
-        h3 {
-          margin-top: 50px;
-          font-size: 17px;
+        .interface {
+            max-width: 370px;
+            grid-gap: 5px;
+            .loading {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .loadingGif {
+                width: 230px;
+            }
         }
-      }
     }
-    .interface {
-      max-width: 370px;
-      grid-gap: 5px;
-      .loading {
-        font-size: 20px;
-        margin-bottom: 20px;
-      }
-      .loadingGif {
-          width: 230px;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 410px) {
-  .layout {
-    .display {
-      .progress {
-        width: 300px;
-      }
-      .pokemonDisplay {
-        width: 300px;
-        height: 170px;
-        .thePokemon {
-          width: 100px;
-          margin-left: 30px;
+    .layout {
+        .display {
+            .progress {
+                width: 300px;
+            }
+            .pokemonDisplay {
+                width: 300px;
+                height: 170px;
+                .thePokemon {
+                    width: 100px;
+                    margin-left: 30px;
+                }
+                .theAnswer {
+                    h3 {
+                        font-size: 17px;
+                    }
+                }
+            }
         }
-        .theAnswer {
-          h3 {
-            font-size: 17px;
-          }
+        .interface {
+            max-width: 300px;
+            grid-gap: 3px;
         }
-      }
     }
-    .interface {
-      max-width: 300px;
-      grid-gap: 3px;
-    }
-  }
 
-  .generations {
-    height: 480px;
-  }
+    .generations {
+        height: 480px;
+    }
 }
 
 @media screen and (max-width: 370px) {
-  .layout {
-    .display {
-      .progress {
-        width: 250px;
-      }
-      .pokemonDisplay {
-        width: 250px;
-        height: 150px;
-        .thePokemon {
-          margin-top: 10px;
-          margin-left: 20px;
+    .layout {
+        .display {
+            .progress {
+                width: 250px;
+            }
+            .pokemonDisplay {
+                  width: 250px;
+                  height: 150px;
+                .thePokemon {
+                    margin-top: 10px;
+                    margin-left: 20px;
+                }
+            }
         }
-      }
+        .interface {
+            max-width: 250px;
+            grid-gap: 3px;
+        }
     }
-    .interface {
-      max-width: 250px;
-      grid-gap: 3px;
-    }
-  }
 }
