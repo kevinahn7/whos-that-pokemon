@@ -47,8 +47,7 @@ export class GameComponent implements OnInit {
   currentGameState: number;
   currentPokemon: object;
   currentPokemonName: string;
-  currentPokemonId: string
-  currentPokemonType: string;
+  currentPokemonId: string;
   selectedGeneration: number;
   gifNumber: number;
   showAnswerBool: boolean = false;
@@ -95,7 +94,6 @@ export class GameComponent implements OnInit {
       this.currentPokemon = data.json();
       this.currentPokemonName = data.json().name;
       this.currentPokemonId = (data.json().id).toString();
-      this.currentPokemonType = (data.json().types[0].type.name)
       console.log(this.currentPokemonName);
     },(err) => {
       this.theError = err;
