@@ -1,5 +1,5 @@
 <h3>Make a guess</h3>
 <form (submit)="makeGuess(guess.value); $event.preventDefault()" class="form-inline theGuess">
-  <input #guess id="guessInput" class="form-control">
+  <input #guess id="guessInput" class="form-control" autofocus="autofocus">
   <button id="guessButton" type="submit" class="btn btn-primary">Guess</button>
 </form>

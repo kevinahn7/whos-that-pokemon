@@ -81,9 +81,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
             display: grid;
             grid-template-columns: 1fr 1fr;
             .thePokemon {
-                width: 270px;
-                margin-top: 50px;
-                margin-left: 70px;
+                width: 190px;
+                margin-top: 90px;
+                margin-left: 120px;
                 transition: 0.5s;
             }
             .theAnswer {
@@ -224,6 +224,11 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
             .pokemonDisplay {
                 width: 600px;
                 height: 350px;
+                .thePokemon {
+                    width: 170px;
+                    margin-top: 70px;
+                    margin-left: 100px;
+                }
                 .theAnswer {
                     h3 {
                         font-size: 40px;
@@ -256,9 +261,8 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
             padding-top: 10px;
             .pokemonDisplay {
                 .thePokemon {
-                    width: 240px;
-                    margin-top: 35px;
-                    margin-left: 55px;
+                    width: 150px;
+                    margin-top: 90px;
                 }
             }
         }
@@ -289,9 +293,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
                 width: 400px;
                 height: 230px;
                 .thePokemon {
-                    width: 140px;
-                    margin-top: 30px;
-                    margin-left: 50px;
+                    width: 110px;
+                    margin-top: 47px;
+                    margin-left: 60px;
                 }
                 .theAnswer {
                     h3 {
@@ -331,7 +335,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
                 width: 350px;
                 height: 200px;
                 .thePokemon {
-                    width: 120px;
+                    width: 100px;
+                    margin-top: 43px;
+                    margin-left: 50px;
                 }
                 h3 {
                     margin-top: 50px;
@@ -363,8 +369,9 @@ $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) bright
                 width: 300px;
                 height: 170px;
                 .thePokemon {
-                    width: 100px;
-                    margin-left: 30px;
+                    width: 95px;
+                    margin-top: 38px;
+                    margin-left: 40px;
                 }
                 .theAnswer {
                     h3 {
