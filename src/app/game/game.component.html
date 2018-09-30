@@ -1,5 +1,5 @@
-<div *ngIf="!theError; else errorPresent">
-  <h1 class="mainHeader">Who's That Pokémon!</h1>
+<div *ngIf="!theError; else errorPresent" class="theGame">
+  <h1 class="mainHeader" [@rubberBand]="rubberBand">Who's That Pokémon!</h1>
   <div class="layout">
     <div class="generations">
       <app-generation-buttons (clickSender)="getRandomNumber($event)"></app-generation-buttons>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="theGreeting" *ngIf="!currentGameState">
-      <h2 class="greeting">Choose a Generation First!</h2>
+      <h2 class="greeting" [@bounceInLeft]="bounceInLeft">Choose a Generation First!</h2>
     </div>
 
     <div class="interface">

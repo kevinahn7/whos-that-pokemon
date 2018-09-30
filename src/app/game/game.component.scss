@@ -36,6 +36,10 @@ $yellow-border-small:
 
 $hidden-color: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
 
+.theGame {
+    overflow-x: hidden;
+}
+
 .mainHeader {
     font-family: 'pokemon';
     text-align: center;

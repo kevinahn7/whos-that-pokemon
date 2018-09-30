@@ -1,14 +1,24 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { errorResponses } from '../models/errorResponses.models';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { rubberBand, bounceInLeft } from 'ng-animate';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
-  providers: [PokemonService]
+  providers: [PokemonService],
+  animations: [
+    trigger('rubberBand', [transition('void => *', useAnimation(rubberBand, {
+      params: { timing: 1, delay: 1 }
+    }))]),
+    trigger('bounceInLeft', [transition('void => *', useAnimation(bounceInLeft, {
+      params: { timing: 1 }
+    }))])
+  ]
 })
 
 export class GameComponent implements OnInit {
@@ -108,6 +118,7 @@ export class GameComponent implements OnInit {
       this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
+      this.animate('rubberBand')
       if (this.dialogs[this.numberOfRights]) this.openDialog();
     } else {
       this.numberOfRights = 0;
@@ -142,5 +153,10 @@ export class GameComponent implements OnInit {
       width: '400px',
       data: {numberOfRights: this.numberOfRights}
     });
+  }
+
+  animate(name) {
+    console.log(name)
+    this[name] = !this[name];
   }
 }
