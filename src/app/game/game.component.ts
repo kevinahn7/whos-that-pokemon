@@ -13,7 +13,7 @@ import { rubberBand, bounceInLeft } from 'ng-animate';
   providers: [PokemonService],
   animations: [
     trigger('rubberBand', [transition('void => *', useAnimation(rubberBand, {
-      params: { timing: 1, delay: 1 }
+      params: { delay: 1 }
     }))]),
     trigger('bounceInLeft', [transition('void => *', useAnimation(bounceInLeft, {
       params: { timing: 1 }
@@ -118,7 +118,6 @@ export class GameComponent implements OnInit {
       this.numberOfRights++;
       document.getElementById(this.currentPokemonId).classList.remove("hidden");
       this.toggleInputs(true);
-      this.animate('rubberBand')
       if (this.dialogs[this.numberOfRights]) this.openDialog();
     } else {
       this.numberOfRights = 0;
@@ -153,10 +152,5 @@ export class GameComponent implements OnInit {
       width: '400px',
       data: {numberOfRights: this.numberOfRights}
     });
-  }
-
-  animate(name) {
-    console.log(name)
-    this[name] = !this[name];
   }
 }
